@@ -23,11 +23,11 @@ class IAlerter
         virtual void sendAlert() = 0;
 };
 
-class CEmailAlert:public IAlerter
+class EmailAlert:public IAlerter
 {
     public:
         bool emailSent;
-    CEmailAlert():
+    EmailAlert():
         emailSent(false)
     {}
     void sendAlert()
@@ -36,11 +36,11 @@ class CEmailAlert:public IAlerter
     }
 };
 
-class CLEDALert:public IAlerter
+class LEDAlert:public IAlerter
 {
     public:
         bool ledGlows;
-    CLEDALert():
+    LEDAlert():
         ledGlows(false)
     {}
     void sendAlert()
@@ -51,6 +51,7 @@ class CLEDALert:public IAlerter
 
 class StatsAlerter
 {
+public:
     float maxThreshold;
     vector<IAlerter*> Alerts;
     StatsAlerter(const float maxTh, vector<IAlerter*>alts):
