@@ -20,7 +20,6 @@ TEST_CASE("average is NaN for empty array") {
     
     //Design the REQUIRE statement here.
     //Use http://www.cplusplus.com/reference/cmath/isnan/
-    
     REQUIRE(std::isnan(computedStats.avg));
     REQUIRE(std::isnan(computedStats.max));
     REQUIRE(std::isnan(computedStats.min));
